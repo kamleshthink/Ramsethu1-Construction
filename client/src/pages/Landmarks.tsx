@@ -122,8 +122,8 @@ export default function Landmarks() {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Landmark Projects - NCC Limited</title>
-        <meta name="description" content="Explore NCC Limited's landmark infrastructure projects across India including healthcare, transportation, buildings, and more." />
+        <title>Landmark Projects - Ramsetu Construction </title>
+        <meta name="description" content="Explore Ramsetu Construction's landmark infrastructure projects across India including healthcare, transportation, buildings, and more." />
       </Helmet>
 
       {/* Hero Section */}
