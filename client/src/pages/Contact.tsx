@@ -23,27 +23,27 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 const offices = [
   {
     city: "Hyderabad (Headquarters)",
-    address: "NCC House, Madhapur, Hyderabad - 500081, Telangana, India",
+    address: "Ramsetu Construction House, Madhapur, Hyderabad - 500081, Telangana, India",
     phone: "+91 40 2326 8888",
-    email: "info@nccltd.in"
+    email: "info@ramsetu.in"
   },
   {
     city: "Mumbai",
-    address: "NCC Limited, Bandra Kurla Complex, Mumbai - 400051, Maharashtra",
+    address: "Ramsetu Construction, Bandra Kurla Complex, Mumbai - 400051, Maharashtra",
     phone: "+91 22 2659 8888",
-    email: "mumbai@nccltd.in"
+    email: "mumbai@ramsetu.in"
   },
   {
     city: "Delhi",
-    address: "NCC Limited, Connaught Place, New Delhi - 110001",
+    address: "Ramsetu Construction, Connaught Place, New Delhi - 110001",
     phone: "+91 11 2334 8888",
-    email: "delhi@nccltd.in"
+    email: "delhi@ramsetu.in"
   },
   {
     city: "Bangalore",
-    address: "NCC Limited, Electronic City, Bangalore - 560100, Karnataka",
+    address: "Ramsetu Construction, Electronic City, Bangalore - 560100, Karnataka",
     phone: "+91 80 2783 8888",
-    email: "bangalore@nccltd.in"
+    email: "bangalore@ramsetu.in"
   }
 ];
 
@@ -90,8 +90,8 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Contact Us - NCC Limited</title>
-        <meta name="description" content="Get in touch with NCC Limited. Contact our offices across India or send us a message for your infrastructure development needs." />
+        <title>Contact Us - Ramsetu Construction</title>
+        <meta name="description" content="Get in touch with Ramsetu Construction. Contact our offices across India or send us a message for your infrastructure development needs." />
       </Helmet>
 
       {/* Hero Section */}
@@ -218,7 +218,7 @@ export default function Contact() {
                         <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                         <div>
                           <p className="font-medium text-gray-900">Address</p>
-                          <p className="text-gray-600">NCC House, Madhapur<br />Hyderabad - 500081<br />Telangana, India</p>
+                          <p className="text-gray-600">Ramsetu Construction, Madhapur<br />Hyderabad - 500081<br />Telangana, India</p>
                         </div>
                       </div>
                       
@@ -234,7 +234,7 @@ export default function Contact() {
                         <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                         <div>
                           <p className="font-medium text-gray-900">Email</p>
-                          <p className="text-gray-600">info@nccltd.in</p>
+                          <p className="text-gray-600">info@ramsetu.in</p>
                         </div>
                       </div>
                       
@@ -324,7 +324,7 @@ export default function Contact() {
                 <div className="text-center">
                   <MapPin className="h-12 w-12 mx-auto mb-4" />
                   <p className="text-lg font-medium">Interactive Map</p>
-                  <p className="text-sm">NCC House, Madhapur, Hyderabad</p>
+                  <p className="text-sm">Ramsetu Construction House, Madhapur, Hyderabad</p>
                   <p className="text-xs mt-2">Google Maps integration would be implemented here</p>
                 </div>
               </div>
