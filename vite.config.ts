@@ -7,19 +7,17 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  root: path.resolve(__dirname, "client/src"),         // ✅ Index.html ke actual location ke hisaab se
   plugins: [
     react(),
     runtimeErrorOverlay(),
-    ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
-      ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
-          ),
-        ]
-      : []),
   ],
+  build: {
+    rollupOptions: {
+      input: path.resolve(__dirname, "client/src/index.html")  // ✅ Tere index.html ka path
+    },
+    outDir: path.resolve(__dirname, "dist"), // ✅ Render ke liye final output
+    emptyOutDir: true,
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client", "src"),
@@ -27,14 +25,5 @@ export default defineConfig({
       "@assets": path.resolve(__dirname, "attached_assets"),
     },
   },
-  build: {
-    outDir: path.resolve(__dirname, "dist"),            // ✅ Render-compatible output
-    emptyOutDir: true,
-  },
-  server: {
-    fs: {
-      strict: true,
-      deny: ["**/.*"],
-    },
-  },
+  root: ".", // ✅ because index.html manually define ho gaya hai
 });
