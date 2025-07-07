@@ -9,7 +9,7 @@ import { Play, Calendar, Award, Newspaper, Video } from "lucide-react";
 const newsItems = [
   {
     id: 1,
-    title: "EBC Limited Wins Major Infrastructure Contract Worth ₹5,000 Crores",
+    title: "Ramsetu Construction Wins Major Infrastructure Contract Worth ₹5,000 Crores",
     excerpt: "The company has secured a significant railway infrastructure project that will enhance connectivity across three states.",
     date: "2024-01-15",
     category: "Business",
@@ -17,7 +17,7 @@ const newsItems = [
   },
   {
     id: 2,
-    title: "Sustainability Initiative: NCC Commits to Carbon Neutral Operations by 2030",
+    title: "Sustainability Initiative: Ramsetu Construction Commits to Carbon Neutral Operations by 2030",
     excerpt: "The company announces comprehensive environmental strategy to reduce carbon footprint across all operations.",
     date: "2024-01-10",
     category: "Sustainability",
@@ -44,7 +44,7 @@ const videos = [
   },
   {
     id: 2,
-    title: "EBC Corporate Film 2024",
+    title: "Ramsetu Construction Corporate Film 2024",
     description: "Showcasing our infrastructure excellence across India",
     duration: "5:42",
     thumbnail: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
@@ -114,8 +114,8 @@ export default function Media() {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Media Center - EBC Limited</title>
-        <meta name="description" content="Latest news, videos, events, and awards from EBC Limited. Stay updated with our infrastructure developments and company achievements." />
+        <title>Media Center - Ramsetu Construction </title>
+        <meta name="description" content="Latest news, videos, events, and awards from Ramsetu Construction. Stay updated with our infrastructure developments and company achievements." />
       </Helmet>
 
       {/* Hero Section */}
