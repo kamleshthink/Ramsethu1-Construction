@@ -8,8 +8,8 @@ export default function Investors() {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Investor Relations - NCC Limited</title>
-        <meta name="description" content="Access NCC Limited's financial reports, annual reports, shareholding information, and investor resources." />
+        <title>Investor Relations - Ramsetu Construction </title>
+        <meta name="description" content="Access Ramsetu Construction's financial reports, annual reports, shareholding information, and investor resources." />
       </Helmet>
 
       {/* Hero Section */}
@@ -250,7 +250,7 @@ export default function Investors() {
                     <div className="space-y-2 text-gray-600">
                       <p><strong>Email:</strong> investors@nccltd.in</p>
                       <p><strong>Phone:</strong> +91 40 2326 8888</p>
-                      <p><strong>Address:</strong> NCC House, Madhapur, Hyderabad - 500081</p>
+                      <p><strong>Address:</strong> Ramsetu Construction House, Madhapur, Hyderabad - 500081</p>
                     </div>
                   </div>
                   <div>
