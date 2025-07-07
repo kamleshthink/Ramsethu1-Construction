@@ -31,13 +31,6 @@ export default function Home() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen">
-      <Helmet>
-        <title>Ramsetu Construction - India's Leading Infrastructure Conglomerate</title>
-        <meta name="description" content="Over 4 decades of infrastructure excellence with 490+ building projects, 20,000+ km pipelines, and 350,000+ acres irrigated across India." />
-      </Helmet>
-
-      {/* Hero Video Section */}
     <section className="relative w-full h-screen overflow-hidden">
   {/* YouTube video as background */}
   <iframe
@@ -49,51 +42,43 @@ export default function Home() {
     allowFullScreen
   ></iframe>
 
-  {/* Optional overlay for darkening effect */}
+  {/* Optional overlay */}
   <div className="absolute inset-0 bg-black/30 z-10"></div>
 
-  {/* Content over video */}
-  <div className="relative z-20 flex items-center justify-center h-full">
-    <h1 className="text-white text-4xl md:text-5xl font-bold text-center px-4">
-      Building the Future with Strength 💪
-    </h1>
+  {/* Hero Content */}
+  <div className="relative z-20 container mx-auto px-4 py-32 md:py-40">
+    <div className="max-w-5xl mx-auto text-center text-white">
+      <div className="animate-fade-in">
+        <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+          A LEGACY OF
+          <br />
+          <span className="text-yellow-400">TRANSFORMATION</span>
+        </h1>
+        <p className="text-2xl md:text-3xl mb-6 text-blue-100 font-light">
+          Over 4 decades of infrastructure excellence across India
+        </p>
+        <p className="text-lg md:text-xl mb-12 text-blue-100 max-w-4xl mx-auto leading-relaxed">
+          Ramsetu Construction has ventured into diverse sectors of construction and infrastructural development. 
+          Spanning across the nation, our construction activities bear the indelible stamp of high quality.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <Link href="/landmarks">
+            <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 text-lg">
+              Explore Our Projects
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+          <Link href="/about">
+            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold">
+              Learn More
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-        
-        {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-4 py-32 md:py-40">
-          <div className="max-w-5xl mx-auto text-center text-white">
-            <div className="animate-fade-in">
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                A LEGACY OF
-                <br />
-                <span className="text-yellow-400">TRANSFORMATION</span>
-              </h1>
-              <p className="text-2xl md:text-3xl mb-6 text-blue-100 font-light">
-                Over 4 decades of infrastructure excellence across India
-              </p>
-              <p className="text-lg md:text-xl mb-12 text-blue-100 max-w-4xl mx-auto leading-relaxed">
-                Ramsetu Construction has ventured into diverse sectors of construction and infrastructural development. 
-                Spanning across the nation, our construction activities bear the indelible stamp of high quality.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link href="/landmarks">
-                  <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 text-lg">
-                    Explore Our Projects
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link href="/about">
-                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold">
-                    Learn More
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Enhanced Statistics Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
