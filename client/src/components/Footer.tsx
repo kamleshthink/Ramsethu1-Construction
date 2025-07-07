@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             {/* Company Info */}
             <div>
-              <div className="text-2xl font-bold mb-4">EBC Limited</div>
+              <div className="text-2xl font-bold mb-4">Ramsetu Construction</div>
               <p className="text-gray-400 text-sm mb-4">
                 India's leading infrastructure conglomerate with over 4 decades of excellence in construction and development.
               </p>
@@ -77,7 +77,7 @@ export default function Footer() {
                 </p>
                 <p className="flex items-center gap-2">
                   <Mail className="h-4 w-4" />
-                  info@nccltd.in
+                  info@ramsetu.in
                 </p>
               </div>
               <div className="mt-4">
@@ -102,7 +102,7 @@ export default function Footer() {
 
           <div className="border-t border-gray-800 pt-6">
             <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-              <p>&copy; 2024 EBC Limited. All rights reserved.</p>
+              <p>&copy; 2024 Ramsetu Construction. All rights reserved.</p>
               <div className="flex space-x-6 mt-4 md:mt-0">
                 <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
