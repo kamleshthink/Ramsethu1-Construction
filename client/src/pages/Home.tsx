@@ -32,20 +32,23 @@ export default function Home() {
 
   return (
     <div>
-      <section className="relative w-full h-screen overflow-hidden">
+      <section className="fixed inset-0 w-screen h-screen overflow-hidden z-0">
         {/* YouTube video as background */}
-        <iframe
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          src="https://www.youtube.com/embed/OknF1lfYCEk?autoplay=1&mute=1&loop=1&playlist=OknF1lfYCEk&controls=0&showinfo=0&modestbranding=1"
-          title="Heavy Construction Video"
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-        ></iframe>
-        {/* Optional overlay */}
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        <div className="absolute inset-0 w-full h-full">
+          <iframe
+            className="w-full h-full absolute top-0 left-0"
+            src="https://www.youtube.com/embed/OknF1lfYCEk?autoplay=1&mute=1&loop=1&playlist=OknF1lfYCEk&controls=0&showinfo=0&modestbranding=1"
+            title="Heavy Construction Video"
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            style={{ width: '100vw', height: '100vh', objectFit: 'cover', pointerEvents: 'none' }}
+          ></iframe>
+          {/* Optional overlay */}
+          <div className="absolute inset-0 bg-black/30 z-10"></div>
+        </div>
         {/* Hero Content */}
-        <div className="relative z-20 container mx-auto px-4 py-32 md:py-40">
+        <div className="relative z-20 container mx-auto px-4 py-32 md:py-40 h-full flex items-center justify-center">
           <div className="max-w-5xl mx-auto text-center text-white">
             <div className="animate-fade-in">
               <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
