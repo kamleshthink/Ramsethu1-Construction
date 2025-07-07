@@ -38,7 +38,7 @@ export default function Home() {
       </Helmet>
 
       {/* Hero Video Section */}
-     <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-screen overflow-hidden">
   {/* YouTube video as background */}
   <iframe
     className="absolute top-0 left-0 w-full h-full object-cover"
@@ -49,12 +49,14 @@ export default function Home() {
     allowFullScreen
   ></iframe>
 
-  {/* Optional Overlay (black shade) */}
+  {/* Optional overlay for darkening effect */}
   <div className="absolute inset-0 bg-black/30 z-10"></div>
 
-  {/* Text / buttons on top of video */}
-  <div className="relative z-20 flex items-center justify-center h-full text-white text-3xl font-bold">
-    Building the Future with Strength 💪
+  {/* Content over video */}
+  <div className="relative z-20 flex items-center justify-center h-full">
+    <h1 className="text-white text-4xl md:text-5xl font-bold text-center px-4">
+      Building the Future with Strength 💪
+    </h1>
   </div>
 </section>
 
