@@ -131,8 +131,8 @@ export default function HumanCapital() {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Human Capital - EBC Limited</title>
-        <meta name="description" content="Join EBC Limited's team of skilled professionals. Explore career opportunities, leadership team, and company culture in India's leading infrastructure company." />
+        <title>Human Capital -Ramsetu Construction </title>
+        <meta name="description" content="Join Ramsetu Construction's team of skilled professionals. Explore career opportunities, leadership team, and company culture in India's leading infrastructure company." />
       </Helmet>
 
       {/* Hero Section */}
@@ -212,7 +212,7 @@ export default function HumanCapital() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Culture & Values</h2>
               <p className="text-xl text-gray-600">
-                At EBC, we follow the three-fold path of hard work, tenacity and common sense
+                At Ramsetu Construction, we follow the three-fold path of hard work, tenacity and common sense
               </p>
             </div>
             
