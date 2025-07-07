@@ -7,17 +7,11 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  root: path.resolve(__dirname, "client"),  // ✅ because index.html is in /client
   plugins: [
     react(),
     runtimeErrorOverlay(),
   ],
-  build: {
-    rollupOptions: {
-      input: path.resolve(__dirname, "client/src/index.html")  // ✅ Tere index.html ka path
-    },
-    outDir: path.resolve(__dirname, "dist"), // ✅ Render ke liye final output
-    emptyOutDir: true,
-  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client", "src"),
@@ -25,5 +19,8 @@ export default defineConfig({
       "@assets": path.resolve(__dirname, "attached_assets"),
     },
   },
-  root: ".", // ✅ because index.html manually define ho gaya hai
+  build: {
+    outDir: path.resolve(__dirname, "dist"),
+    emptyOutDir: true,
+  },
 });
