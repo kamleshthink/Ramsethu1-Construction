@@ -7,8 +7,8 @@ export default function Commitment() {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Our Commitment - NCC Limited</title>
-        <meta name="description" content="NCC Limited's commitment to sustainability, safety, quality, and corporate social responsibility in all our infrastructure projects." />
+        <title>Our Commitment - Ramsetu Construction </title>
+        <meta name="description" content="Ramsetu Construction's commitment to sustainability, safety, quality, and corporate social responsibility in all our infrastructure projects." />
       </Helmet>
 
       {/* Hero Section */}
@@ -30,7 +30,7 @@ export default function Commitment() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Strong Foundation of Values</h2>
               <p className="text-xl text-gray-600">
-                Outgrowing the belief that business exists for the sole purpose of profits, NCC has embedded the concept of sustainability in all three perspectives: economic, social and environmental.
+                Outgrowing the belief that business exists for the sole purpose of profits, Ramsetu Construction has embedded the concept of sustainability in all three perspectives: economic, social and environmental.
               </p>
             </div>
             
@@ -143,7 +143,7 @@ export default function Commitment() {
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Safety First</h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  Safety is not just a priority at NCC - it's a core value that permeates every aspect of our operations. We believe that every worker has the right to return home safely every day.
+                  Safety is not just a priority at Ramsetu Construction - it's a core value that permeates every aspect of our operations. We believe that every worker has the right to return home safely every day.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="text-center">
@@ -237,7 +237,7 @@ export default function Commitment() {
               The company's goals are strategically aligned to ensure balanced growth by giving back to society.
             </blockquote>
             <cite className="text-blue-200 font-medium">
-              - NCC Limited Core Values
+              - Ramsetu Construction Core Values
             </cite>
           </div>
         </div>
