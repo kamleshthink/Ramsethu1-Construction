@@ -31,55 +31,52 @@ export default function Home() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
-  {/* YouTube video as background */}
-  <iframe
-    className="absolute top-0 left-0 w-full h-full object-cover"
-    src="https://www.youtube.com/embed/OknF1lfYCEk?autoplay=1&mute=1&loop=1&playlist=OknF1lfYCEk&controls=0&showinfo=0&modestbranding=1"
-    title="Heavy Construction Video"
-    frameBorder="0"
-    allow="autoplay; encrypted-media"
-    allowFullScreen
-  ></iframe>
-
-  {/* Optional overlay */}
-  <div className="absolute inset-0 bg-black/30 z-10"></div>
-
-  {/* Hero Content */}
-  <div className="relative z-20 container mx-auto px-4 py-32 md:py-40">
-    <div className="max-w-5xl mx-auto text-center text-white">
-      <div className="animate-fade-in">
-        <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-          A LEGACY OF
-          <br />
-          <span className="text-yellow-400">TRANSFORMATION</span>
-        </h1>
-        <p className="text-2xl md:text-3xl mb-6 text-blue-100 font-light">
-          Over 4 decades of infrastructure excellence across India
-        </p>
-        <p className="text-lg md:text-xl mb-12 text-blue-100 max-w-4xl mx-auto leading-relaxed">
-          Ramsetu Construction has ventured into diverse sectors of construction and infrastructural development. 
-          Spanning across the nation, our construction activities bear the indelible stamp of high quality.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <Link href="/landmarks">
-            <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 text-lg">
-              Explore Our Projects
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
-          <Link href="/about">
-            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold">
-              Learn More
-            </Button>
-          </Link>
+    <div>
+      <section className="relative w-full h-screen overflow-hidden">
+        {/* YouTube video as background */}
+        <iframe
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          src="https://www.youtube.com/embed/OknF1lfYCEk?autoplay=1&mute=1&loop=1&playlist=OknF1lfYCEk&controls=0&showinfo=0&modestbranding=1"
+          title="Heavy Construction Video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        ></iframe>
+        {/* Optional overlay */}
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        {/* Hero Content */}
+        <div className="relative z-20 container mx-auto px-4 py-32 md:py-40">
+          <div className="max-w-5xl mx-auto text-center text-white">
+            <div className="animate-fade-in">
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                A LEGACY OF
+                <br />
+                <span className="text-yellow-400">TRANSFORMATION</span>
+              </h1>
+              <p className="text-2xl md:text-3xl mb-6 text-blue-100 font-light">
+                Over 4 decades of infrastructure excellence across India
+              </p>
+              <p className="text-lg md:text-xl mb-12 text-blue-100 max-w-4xl mx-auto leading-relaxed">
+                Ramsetu Construction has ventured into diverse sectors of construction and infrastructural development. 
+                Spanning across the nation, our construction activities bear the indelible stamp of high quality.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link href="/landmarks">
+                  <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 text-lg">
+                    Explore Our Projects
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link href="/about">
+                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold">
+                    Learn More
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+      </section>
       {/* Enhanced Statistics Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -100,7 +97,6 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-600/20 rounded-2xl transform rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
                   <div className="relative bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
                     <StatisticsCounter
-                      key={index}
                       value={stat.value}
                       label={stat.label}
                     />
@@ -111,7 +107,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Enhanced Expertise Section */}
       <section className="py-24 bg-white relative">
         <div className="container mx-auto px-4">
@@ -160,7 +155,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Quote Section */}
       <section className="py-16 bg-primary text-white relative">
         <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
@@ -186,7 +180,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Enhanced Projects Showcase with Horizontal Carousel */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
@@ -213,7 +206,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Enhanced Our Strength */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50"></div>
@@ -295,7 +287,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Leadership Preview */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -336,7 +327,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* YouTube Achievement Videos Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
@@ -397,7 +387,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Annual Reports Section */}
       <section className="py-24 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="container mx-auto px-4">
