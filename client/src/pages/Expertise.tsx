@@ -43,7 +43,7 @@ const expertiseData = [
     title: "Transportation",
     icon: <Construction className="h-8 w-8" />,
     image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600",
-    description: "A strong transportation network shortens the mile, paving the way for better connectivity. Roads form the heart-line of transportation, establishing accessibility to the remotest part of the country, helping maximise economic and social benefits. EBC has proved to be a reliable executor of large-scale contracts within tight schedules. Working hand-in-hand with the government, NCC is working to transform the roads & highways network in the country.",
+    description: "A strong transportation network shortens the mile, paving the way for better connectivity. Roads form the heart-line of transportation, establishing accessibility to the remotest part of the country, helping maximise economic and social benefits. Ramsetu Construction has proved to be a reliable executor of large-scale contracts within tight schedules. Working hand-in-hand with the government, NCC is working to transform the roads & highways network in the country.",
     projects: [
       "National Highways",
       "State Highways",
@@ -58,7 +58,7 @@ const expertiseData = [
     title: "Railways",
     icon: <Train className="h-8 w-8" />,
     image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600",
-    description: "The development of the nation is kept on track by the smooth movement of people and goods. EBC has undertaken to keep the wheels of growth in constant motion by engaging in projects involving dedicated freight corridors, zonal railway projects and private railway sidings.",
+    description: "The development of the nation is kept on track by the smooth movement of people and goods. Ramsetu Construction has undertaken to keep the wheels of growth in constant motion by engaging in projects involving dedicated freight corridors, zonal railway projects and private railway sidings.",
     projects: [
       "Dedicated Freight Corridors",
       "Zonal Railway Projects",
@@ -88,7 +88,7 @@ const expertiseData = [
     title: "Mining",
     icon: <Pickaxe className="h-8 w-8" />,
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600",
-    description: "Spurred by the government of India's firm plans for private sector participation in the mining sector, EBC is digging into this business through Mine Developer-cum-Operator (MDO), removal of overburden and extraction and transportation of coal from Open Cast Mines in India.",
+    description: "Spurred by the government of India's firm plans for private sector participation in the mining sector,Ramsetu Construction is digging into this business through Mine Developer-cum-Operator (MDO), removal of overburden and extraction and transportation of coal from Open Cast Mines in India.",
     projects: [
       "Mine Development",
       "Coal Extraction",
@@ -103,7 +103,7 @@ const expertiseData = [
     title: "Electrical (T&D)",
     icon: <Zap className="h-8 w-8" />,
     image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600",
-    description: "The growing need for electrification across the nation has resulted in the impetus given by the government to speedily impart accessibility to power. NCC's Electrical Division is equipped to handle extensive and demanding electrical construction projects. The vast repertoire of expertise in design, engineering, erection, testing and commissioning of EHV/HV sub-stations & transmission lines, high voltage distribution systems, feeder separation schemes, have helped NCC plug in its strengths to various projects.",
+    description: "The growing need for electrification across the nation has resulted in the impetus given by the government to speedily impart accessibility to power. Ramsetu Construction's Electrical Division is equipped to handle extensive and demanding electrical construction projects. The vast repertoire of expertise in design, engineering, erection, testing and commissioning of EHV/HV sub-stations & transmission lines, high voltage distribution systems, feeder separation schemes, have helped NCC plug in its strengths to various projects.",
     projects: [
       "EHV/HV Sub-stations",
       "Transmission Lines",
@@ -121,8 +121,8 @@ export default function Expertise() {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Our Expertise - NCC Limited</title>
-        <meta name="description" content="Explore NCC Limited's expertise across Buildings, Water & Environment, Transportation, Railways, Irrigation, Mining, and Electrical sectors." />
+        <title>Our Expertise - Ramsetu Construction </title>
+        <meta name="description" content="Explore Ramsetu Construction's expertise across Buildings, Water & Environment, Transportation, Railways, Irrigation, Mining, and Electrical sectors." />
       </Helmet>
 
       {/* Hero Section */}
