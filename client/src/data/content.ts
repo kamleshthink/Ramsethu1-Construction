@@ -1,9 +1,9 @@
 export const statistics = [
   { value: 490, label: "Building Projects" },
-  { value: 20000, label: "KMS Water Pipelines" },
-  { value: 350000, label: "Acres Land Irrigated" },
-  { value: 35000, label: "Villages Electrified" },
-  { value: 11000, label: "Employees" },
+  { value: 2000, label: "KMS Water Pipelines" },
+  { value: 3500, label: "Acres Land Irrigated" },
+  { value: 3500, label: "Villages Electrified" },
+  { value: 1100, label: "Employees" },
 ];
 
 export const expertiseAreas = [
