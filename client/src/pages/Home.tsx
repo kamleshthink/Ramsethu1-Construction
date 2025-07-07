@@ -38,21 +38,26 @@ export default function Home() {
       </Helmet>
 
       {/* Hero Video Section */}
-      <section className="relative overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0 w-full h-full">
-         <iframe
-  className="w-full h-full object-cover"
-  src="https://www.youtube.com/embed/OknF1lfYCEk?autoplay=1&mute=1&loop=1&playlist=OknF1lfYCEk"
-  title="Heavy Construction Video"
-  frameBorder="0"
-  allow="autoplay; encrypted-media"
-  allowFullScreen
-></iframe>
+     <section className="relative w-full h-screen overflow-hidden">
+  {/* YouTube video as background */}
+  <iframe
+    className="absolute top-0 left-0 w-full h-full object-cover"
+    src="https://www.youtube.com/embed/OknF1lfYCEk?autoplay=1&mute=1&loop=1&playlist=OknF1lfYCEk&controls=0&showinfo=0&modestbranding=1"
+    title="Heavy Construction Video"
+    frameBorder="0"
+    allow="autoplay; encrypted-media"
+    allowFullScreen
+  ></iframe>
 
+  {/* Optional Overlay (black shade) */}
+  <div className="absolute inset-0 bg-black/30 z-10"></div>
 
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-blue-900/80"></div>
-        </div>
+  {/* Text / buttons on top of video */}
+  <div className="relative z-20 flex items-center justify-center h-full text-white text-3xl font-bold">
+    Building the Future with Strength 💪
+  </div>
+</section>
+
         
         {/* Hero Content */}
         <div className="relative z-10 container mx-auto px-4 py-32 md:py-40">
