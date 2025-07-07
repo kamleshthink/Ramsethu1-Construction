@@ -7,15 +7,15 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>About Us - EBC Limited</title>
-        <meta name="description" content="Learn about EBC Limited's 4 decades of excellence in infrastructure development, our mission, vision, and commitment to building India's future." />
+        <title>About Us - Ramsetu Construction </title>
+        <meta name="description" content="Learn about Ramsetu Construction's 4 decades of excellence in infrastructure development, our mission, vision, and commitment to building India's future." />
       </Helmet>
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-primary to-blue-800 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">About EBC Limited</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">About Ramsetu Construction</h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100">
               Four decades of unwavering commitment to infrastructure excellence
             </p>
@@ -31,7 +31,7 @@ export default function About() {
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Legacy</h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  EBC Limited has made a mark in the country as one of the largest listed companies in terms of revenue with proven expertise in buildings, transportation, water and environment, irrigation, electrical (T&D), mining and railways sectors.
+                  Ramsetu Construction has made a mark in the country as one of the largest listed companies in terms of revenue with proven expertise in buildings, transportation, water and environment, irrigation, electrical (T&D), mining and railways sectors.
                 </p>
                 <p className="text-lg text-gray-600 mb-6">
                   In the last 4 decades, we have registered remarkable growth, both in terms of number and variety of projects. We have progressed from strength to strength in building expertise within the organisation to handle complex and challenging projects.
@@ -106,7 +106,7 @@ export default function About() {
                 {
                   year: "1980s",
                   title: "Foundation Years",
-                  description: "EBC was established with a vision to contribute to India's infrastructure development."
+                  description: "Ramsetu Construction was established with a vision to contribute to India's infrastructure development."
                 },
                 {
                   year: "1990s", 
