@@ -40,8 +40,8 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Helmet>
-          <title>EBC Limited - India's Leading Infrastructure Conglomerate</title>
-          <meta name="description" content="EBC Limited is India's leading infrastructure conglomerate with over 4 decades of excellence in construction and infrastructure development." />
+          <title> Ramsetu Construction - India's Leading Infrastructure Conglomerate</title>
+          <meta name="description" content="Ramsetu Construction is India's leading infrastructure conglomerate with over 4 decades of excellence in construction and infrastructure development." />
         </Helmet>
         <Toaster />
         <Router />
