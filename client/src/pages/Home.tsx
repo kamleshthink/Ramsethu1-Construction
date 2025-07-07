@@ -43,12 +43,13 @@ export default function Home() {
         <div className="absolute inset-0 w-full h-full">
          <iframe
   className="w-full h-full object-cover"
-  src="https://www.youtube.com/embed/Ij1YXtI2-GU?autoplay=1&mute=1&loop=1&playlist=Ij1YXtI2-GU"
-  title="YouTube video player"
+  src="https://www.youtube.com/embed/OknF1lfYCEk?autoplay=1&mute=1&loop=1&playlist=OknF1lfYCEk"
+  title="Heavy Construction Video"
   frameBorder="0"
   allow="autoplay; encrypted-media"
   allowFullScreen
 ></iframe>
+
 
           <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-blue-900/80"></div>
         </div>
