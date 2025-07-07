@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>EBC Limited - India's Leading Infrastructure Conglomerate</title>
+        <title>Ramsetu Construction - India's Leading Infrastructure Conglomerate</title>
         <meta name="description" content="Over 4 decades of infrastructure excellence with 490+ building projects, 20,000+ km pipelines, and 350,000+ acres irrigated across India." />
       </Helmet>
 
@@ -41,15 +41,15 @@ export default function Home() {
       <section className="relative overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0 w-full h-full">
-          <video 
-            className="w-full h-full object-cover"
-            autoPlay 
-            muted 
-            loop
-            playsInline
-          >
-            <source src="https://youtu.be/IjlYXtI2-GU?si=i7PRp3AJl2NcN_f4" />
-          </video>
+         <iframe
+  className="w-full h-full object-cover"
+  src="https://www.youtube.com/embed/Ij1YXtI2-GU?autoplay=1&mute=1&loop=1&playlist=Ij1YXtI2-GU"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="autoplay; encrypted-media"
+  allowFullScreen
+></iframe>
+
           <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-blue-900/80"></div>
         </div>
         
@@ -66,7 +66,7 @@ export default function Home() {
                 Over 4 decades of infrastructure excellence across India
               </p>
               <p className="text-lg md:text-xl mb-12 text-blue-100 max-w-4xl mx-auto leading-relaxed">
-                EBC Limited has ventured into diverse sectors of construction and infrastructural development. 
+                Ramsetu Construction has ventured into diverse sectors of construction and infrastructural development. 
                 Spanning across the nation, our construction activities bear the indelible stamp of high quality.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -181,13 +181,13 @@ export default function Home() {
                 <span className="text-4xl">"</span>
               </div>
               <blockquote className="text-lg md:text-xl italic mb-6 leading-relaxed">
-                "At EBC, we follow the three fold path of hard work, tenacity and common sense. 
+                "At Ramsetu Construction, we follow the three fold path of hard work, tenacity and common sense. 
                 Because, we believe wisdom is common sense to an uncommon degree. 
                 So, we all are attuned to finding new solutions to challenges old and new."
               </blockquote>
               <cite className="text-blue-200 font-medium">
-                - Dr. A V S Raju, Padma Shri Awardee<br />
-                Founder Chairman Emeritus, EBC Limited
+                - Dr. A V S shastri, Padma Shri Awardee<br />
+                Founder Chairman Emeritus, Ramsetu Construction
               </cite>
             </div>
           </div>
@@ -293,7 +293,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Strong Foundation of Values</h3>
                     <p className="text-gray-600 mb-6 text-lg">Focus on engineering excellence</p>
                     <p className="text-gray-700 leading-relaxed">
-                      EBC Limited has embedded the concept of sustainability in all three perspectives: economic, social and environmental. Values of honesty, integrity and transparency form our founding pillars.
+                      Ramsetu Construction has embedded the concept of sustainability in all three perspectives: economic, social and environmental. Values of honesty, integrity and transparency form our founding pillars.
                     </p>
                   </CardContent>
                 </Card>
