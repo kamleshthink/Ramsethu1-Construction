@@ -48,7 +48,7 @@ export default function Home() {
             loop
             playsInline
           >
-            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+            <source src="https://youtu.be/IjlYXtI2-GU?si=i7PRp3AJl2NcN_f4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-blue-900/80"></div>
         </div>
