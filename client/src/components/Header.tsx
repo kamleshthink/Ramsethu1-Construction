@@ -19,7 +19,7 @@ const navigation = [
       { name: "Our Philosophy", href: "/about/philosophy" },
       { name: "Board of Directors", href: "/about/board" },
       { name: "Global Presence", href: "/about/presence" },
-      { name: "EBC Urban", href: "/about/ebc-urban" }
+      { name: "Ramsetu Urban", href: "/about/ebc-urban" }
     ]
   },
   { 
@@ -120,11 +120,11 @@ export default function Header() {
             </div>
             <div className="flex items-center space-x-1">
               <Mail className="h-3 w-3" />
-              <span>Email: info@ebclimited.in</span>
+              <span>Email: info@ramsetu.in</span>
             </div>
             <div className="flex items-center space-x-1">
               <Briefcase className="h-3 w-3" />
-              <span>Careers: careers@ebclimited.in</span>
+              <span>Careers: careers@ramsetu.in</span>
             </div>
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function Header() {
                 <span className="text-green-600">C</span>
               </div>
               <div>
-                <div className="text-xl font-bold text-gray-900">EBC Limited</div>
+                <div className="text-xl font-bold text-gray-900">Ramsetu Construction</div>
                 <div className="text-xs text-gray-600">Infrastructure Excellence</div>
               </div>
             </div>
