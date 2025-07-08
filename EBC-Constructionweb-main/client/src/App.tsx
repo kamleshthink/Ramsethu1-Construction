@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -15,36 +15,34 @@ import Media from "@/pages/Media";
 import HumanCapital from "@/pages/HumanCapital";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
-
-function Router() {
-  return (
-    <Layout>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/expertise" component={Expertise} />
-        <Route path="/commitment" component={Commitment} />
-        <Route path="/investors" component={Investors} />
-        <Route path="/landmarks" component={Landmarks} />
-        <Route path="/media" component={Media} />
-        <Route path="/human-capital" component={HumanCapital} />
-        <Route path="/contact" component={Contact} />
-        <Route component={NotFound} />
-      </Switch>
-    </Layout>
-  );
-}
+import ExpertiseDetail from "@/pages/ExpertiseDetail";
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Helmet>
-          <title> Ramsetu Construction - India's Leading Infrastructure Conglomerate</title>
-          <meta name="description" content="Ramsetu Construction is India's leading infrastructure conglomerate with over 4 decades of excellence in construction and infrastructure development." />
+          <title> Ramsethu Construction - India's Leading Infrastructure Conglomerate</title>
+          <meta name="description" content="Ramsethu Construction is India's leading infrastructure conglomerate with over 4 decades of excellence in construction and infrastructure development." />
         </Helmet>
         <Toaster />
-        <Router />
+        <Router>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/expertise" element={<Expertise />} />
+              <Route path="/expertise/:id" element={<ExpertiseDetail />} />
+              <Route path="/commitment" element={<Commitment />} />
+              <Route path="/investors" element={<Investors />} />
+              <Route path="/landmarks" element={<Landmarks />} />
+              <Route path="/media" element={<Media />} />
+              <Route path="/human-capital" element={<HumanCapital />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </Router>
       </TooltipProvider>
     </QueryClientProvider>
   );

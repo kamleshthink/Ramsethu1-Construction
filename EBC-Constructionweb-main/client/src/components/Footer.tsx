@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Linkedin, Twitter, Youtube, Facebook } from "lucide-react";
 
 export default function Footer() {
@@ -9,14 +9,14 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             {/* Company Info */}
             <div>
-              <div className="text-2xl font-bold mb-4">Ramsetu Construction</div>
-              <p className="text-gray-400 text-sm mb-4">
-                India's leading infrastructure conglomerate with over 4 decades of excellence in construction and development.
-              </p>
-              <div className="text-sm text-gray-400">
-                <p>160+ Active projects across India</p>
-                <p>Pan India presence with 9 offices</p>
+              <div className="text-2xl font-bold mb-2">Ramsethu Electrical & Mechanical Solutions Pvt. Ltd.</div>
+              <div className="text-gray-400 text-xs mb-2">CIN: U74999JH2016PTC009115</div>
+              <div className="text-gray-400 text-sm mb-2 flex items-start gap-2">
+                <MapPin className="h-4 w-4 mt-0.5" />
+                Sijhua, Bariyath, Ichak, Hazaribagh, Jharkhand – 825402
               </div>
+              <div className="text-xs text-gray-400 mb-2">Head Office</div>
+              <div className="text-xs text-gray-400">&copy; 2024 Ramsethu Electrical & Mechanical Solutions Pvt. Ltd. All rights reserved.</div>
             </div>
 
             {/* Quick Links */}
@@ -24,27 +24,27 @@ export default function Footer() {
               <h3 className="font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/about">
+                  <Link to="/about">
                     <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">About Us</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/expertise">
+                  <Link to="/expertise">
                     <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Our Expertise</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/landmarks">
+                  <Link to="/landmarks">
                     <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Projects</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/investors">
+                  <Link to="/investors">
                     <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Investors</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/media">
+                  <Link to="/media">
                     <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Media</span>
                   </Link>
                 </li>
@@ -67,17 +67,13 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
               <div className="space-y-2 text-sm text-gray-400">
-                <p className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4" />
-                  Hyderabad, Telangana
-                </p>
-                <p className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" />
-                  (+91) 040-23268888
-                </p>
-                <p className="flex items-center gap-2">
-                  <Mail className="h-4 w-4" />
-                  info@ramsetu.in
+                <p className="flex items-center gap-2"><Phone className="h-4 w-4" /> +91-8340360437</p>
+                <p className="flex items-center gap-2"><Phone className="h-4 w-4" /> +91-9601874348</p>
+                <p className="flex items-center gap-2"><Phone className="h-4 w-4" /> +91-6202464498</p>
+                <p className="flex items-center gap-2"><Phone className="h-4 w-4" /> +91-6207510117</p>
+                <p className="flex items-center gap-2"><Phone className="h-4 w-4" /> +91-8758871045</p>
+                <p className="flex items-center gap-2"><Mail className="h-4 w-4" />
+                  <a href="mailto:ramsethu.spl@gmail.com" className="underline hover:text-blue-200">ramsethu.spl@gmail.com</a>
                 </p>
               </div>
               <div className="mt-4">
@@ -102,7 +98,7 @@ export default function Footer() {
 
           <div className="border-t border-gray-800 pt-6">
             <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-              <p>&copy; 2024 Ramsetu Construction. All rights reserved.</p>
+              <p>&copy; 2024 Ramsethu Construction. All rights reserved.</p>
               <div className="flex space-x-6 mt-4 md:mt-0">
                 <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

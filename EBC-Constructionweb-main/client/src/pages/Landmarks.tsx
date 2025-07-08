@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -115,15 +115,15 @@ export default function Landmarks() {
     setFilteredProjects(filtered);
   };
 
-  useState(() => {
+  useEffect(() => {
     handleFilter();
   }, [searchTerm, selectedCategory]);
 
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Landmark Projects - Ramsetu Construction </title>
-        <meta name="description" content="Explore Ramsetu Construction's landmark infrastructure projects across India including healthcare, transportation, buildings, and more." />
+        <title>Landmark Projects - Ramsethu Construction </title>
+        <meta name="description" content="Explore Ramsethu Construction's landmark infrastructure projects across India including healthcare, transportation, buildings, and more." />
       </Helmet>
 
       {/* Hero Section */}

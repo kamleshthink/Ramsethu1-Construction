@@ -2,5 +2,8 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.10"
   }
 }

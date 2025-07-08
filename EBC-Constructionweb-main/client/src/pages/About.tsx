@@ -7,15 +7,15 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>About Us - Ramsetu Construction </title>
-        <meta name="description" content="Learn about Ramsetu Construction's 4 decades of excellence in infrastructure development, our mission, vision, and commitment to building India's future." />
+        <title>About Us - Ramsethu Construction </title>
+        <meta name="description" content="Learn about Ramsethu Construction's 4 decades of excellence in infrastructure development, our mission, vision, and commitment to building India's future." />
       </Helmet>
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-primary to-blue-800 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">About Ramsetu Construction</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">About Ramsethu Construction</h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100">
               Four decades of unwavering commitment to infrastructure excellence
             </p>
@@ -29,13 +29,37 @@ export default function About() {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Legacy</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Company Overview – Ramsethu Electrical & Mechanical Solutions Pvt. Ltd.</h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  Ramsetu Construction has made a mark in the country as one of the largest listed companies in terms of revenue with proven expertise in buildings, transportation, water and environment, irrigation, electrical (T&D), mining and railways sectors.
+                  Ramsethu Electrical & Mechanical Solutions Pvt. Ltd. is a rapidly emerging force in India’s infrastructure landscape, specializing in Electrical, Mechanical, and Renewable Energy (Solar) solutions. Driven by technical excellence and a vision for a sustainable future, we deliver turnkey projects with precision, safety, and reliability.
                 </p>
-                <p className="text-lg text-gray-600 mb-6">
-                  In the last 4 decades, we have registered remarkable growth, both in terms of number and variety of projects. We have progressed from strength to strength in building expertise within the organisation to handle complex and challenging projects.
-                </p>
+                <div className="mb-6">
+                  <div className="font-semibold text-primary mb-2">🔧 Our Core Capabilities Include:</div>
+                  <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                    <li>
+                      <span className="font-semibold">Electrical EPC Works:</span> End-to-end erection, commissioning, and testing of high-voltage switchyards, power transformers, control panels, and transmission lines across industrial and public sector infrastructure.
+                    </li>
+                    <li>
+                      <span className="font-semibold">Mechanical Solutions:</span> Professional execution of pipeline systems, boiler erection, and mechanical maintenance across thermal and industrial applications.
+                    </li>
+                    <li>
+                      <span className="font-semibold">Solar Power Systems:</span> We have successfully installed over 300 kWp of solar power systems across rural and urban rooftops. Our landmark achievement includes the installation of 26 kWp solar PV systems across 10 railway stations under East Central Railway — contributing to Indian Railways' sustainability mission.
+                    </li>
+                    <li>
+                      <span className="font-semibold">Railway Signalling & Telecom:</span> Our dedicated team executes complex projects involving signal system modernization, panel installations, switching gear upgrades, and cable laying for Indian Railways, ensuring safety, precision, and long-term reliability.
+                    </li>
+                  </ul>
+                </div>
+                <div className="mb-6">
+                  <div className="font-semibold text-primary mb-2">🛠️ Value We Bring:</div>
+                  <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                    <li>Strong engineering backbone with real-time execution capability</li>
+                    <li>In-house facilities, tools, and trained manpower for high-scale operations</li>
+                    <li>AMC, renovation, and maintenance-ready services across all verticals</li>
+                    <li>Committed to quality, deadlines, and zero-defect delivery</li>
+                  </ul>
+                </div>
+                <p className="text-lg text-gray-700 italic">We don’t just deliver infrastructure — we build the systems that power progress.</p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary mb-2">160+</div>
@@ -106,7 +130,7 @@ export default function About() {
                 {
                   year: "1980s",
                   title: "Foundation Years",
-                  description: "Ramsetu Construction was established with a vision to contribute to India's infrastructure development."
+                  description: "Ramsethu Construction was established with a vision to contribute to India's infrastructure development."
                 },
                 {
                   year: "1990s", 

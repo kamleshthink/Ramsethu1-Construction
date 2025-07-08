@@ -20,31 +20,63 @@ const contactFormSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
-const offices = [
+// Company, office, and bank details
+const companyInfo = {
+  name: "Ramsethu Electrical & Mechanical Solutions Pvt. Ltd.",
+  cin: "U74999JH2016PTC009115",
+  phones: [
+    "+91-8340360437",
+    "+91-9601874348",
+    "+91-6202464498",
+    "+91-6207510117",
+    "+91-8758871045"
+  ],
+  email: "ramsethu.spl@gmail.com"
+};
+
+const headOffice = {
+  label: "Registered / Head Office",
+  address: [
+    "C/O Rajendra Prasad Mehta",
+    "Sijhua, Bariyath, Ichak",
+    "District – Hazaribagh, Jharkhand – 825402",
+    "Post Office: Bariyath",
+    "Police Station: Ichak"
+  ]
+};
+
+const branchOffices = [
   {
-    city: "Hyderabad (Headquarters)",
-    address: "Ramsetu Construction House, Madhapur, Hyderabad - 500081, Telangana, India",
-    phone: "+91 40 2326 8888",
-    email: "info@ramsetu.in"
+    label: "Branch Office – Jharkhand (Ranchi)",
+    address: [
+      "Opposite Ankur Nursery",
+      "C/O Sant Prasad",
+      "Gutuwa, Kathalmore, Ranchi – 835222, Jharkhand"
+    ]
   },
   {
-    city: "Mumbai",
-    address: "Ramsetu Construction, Bandra Kurla Complex, Mumbai - 400051, Maharashtra",
-    phone: "+91 22 2659 8888",
-    email: "mumbai@ramsetu.in"
-  },
-  {
-    city: "Delhi",
-    address: "Ramsetu Construction, Connaught Place, New Delhi - 110001",
-    phone: "+91 11 2334 8888",
-    email: "delhi@ramsetu.in"
-  },
-  {
-    city: "Bangalore",
-    address: "Ramsetu Construction, Electronic City, Bangalore - 560100, Karnataka",
-    phone: "+91 80 2783 8888",
-    email: "bangalore@ramsetu.in"
+    label: "Branch Office – Uttar Pradesh (Prayagraj)",
+    address: [
+      "Vikesh Kumar",
+      "Flat 2L, Tower 01",
+      "Rudra Akriti Apartment",
+      "Naini, Allahabad – 211008"
+    ]
   }
+];
+
+const officialDocs = [
+  { type: "PAN", value: "AAHCR9097G" },
+  { type: "GST", value: "20AAHCR9097G1Z5" },
+  { type: "PF Code", value: "JHRAN1599155000" },
+  { type: "ESIC Code", value: "60001598270001019" },
+  { type: "Electrical License No.", value: "JH\\EC\\3368 (Valid till 31.12.2024)" }
+];
+
+const banks = [
+  "ICICI Bank – Matwari Branch, Hazaribagh",
+  "State Bank of India – RIMS Branch, Ranchi",
+  "HDFC Bank – Matwari Branch, Hazaribagh"
 ];
 
 export default function Contact() {
@@ -90,8 +122,8 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Contact Us - Ramsetu Construction</title>
-        <meta name="description" content="Get in touch with Ramsetu Construction. Contact our offices across India or send us a message for your infrastructure development needs." />
+        <title>Contact Us - Ramsethu Construction</title>
+        <meta name="description" content="Get in touch with Ramsethu Construction. Contact our offices across India or send us a message for your infrastructure development needs." />
       </Helmet>
 
       {/* Hero Section */}
@@ -205,68 +237,67 @@ export default function Contact() {
                 </Card>
               </div>
 
-              {/* Contact Information */}
+              {/* Contact Info (Updated) */}
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
-                
-                {/* Primary Contact */}
                 <Card className="mb-6">
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">Head Office</h3>
-                    <div className="space-y-4">
-                      <div className="flex items-start space-x-3">
-                        <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                        <div>
-                          <p className="font-medium text-gray-900">Address</p>
-                          <p className="text-gray-600">Ramsetu Construction, Madhapur<br />Hyderabad - 500081<br />Telangana, India</p>
-                        </div>
+                    <div className="mb-4">
+                      <div className="font-semibold text-primary mb-1">{companyInfo.name}</div>
+                      <div className="text-xs text-gray-600 mb-1">CIN: {companyInfo.cin}</div>
+                      <div className="flex flex-wrap gap-2 mb-1">
+                        {companyInfo.phones.map((ph, i) => (
+                          <span key={i} className="inline-flex items-center gap-1 text-gray-700 text-sm"><Phone className="h-4 w-4" /> {ph}</span>
+                        ))}
                       </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                        <div>
-                          <p className="font-medium text-gray-900">Phone</p>
-                          <p className="text-gray-600">(+91) 040-23268888</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                        <div>
-                          <p className="font-medium text-gray-900">Email</p>
-                          <p className="text-gray-600">info@ramsetu.in</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <Clock className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                        <div>
-                          <p className="font-medium text-gray-900">Business Hours</p>
-                          <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 9:00 AM - 1:00 PM</p>
-                        </div>
+                      <div className="flex items-center gap-1 text-gray-700 text-sm">
+                        <Mail className="h-4 w-4" />
+                        <a href={`mailto:${companyInfo.email}`} className="underline hover:text-primary">{companyInfo.email}</a>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
-
-                {/* Social Media */}
+                <Card className="mb-6">
+                  <CardContent className="p-6">
+                    <div className="font-semibold text-primary mb-2">🏢 {headOffice.label}</div>
+                    {headOffice.address.map((line, i) => (
+                      <div key={i} className="text-gray-700 text-sm">{line}</div>
+                    ))}
+                  </CardContent>
+                </Card>
+                {branchOffices.map((b, idx) => (
+                  <Card key={idx} className="mb-6">
+                    <CardContent className="p-6">
+                      <div className="font-semibold text-primary mb-2">🏢 {b.label}</div>
+                      {b.address.map((line, i) => (
+                        <div key={i} className="text-gray-700 text-sm">{line}</div>
+                      ))}
+                    </CardContent>
+                  </Card>
+                ))}
+                {/* Official Docs Table */}
+                <Card className="mb-6">
+                  <CardContent className="p-6">
+                    <div className="font-semibold text-primary mb-2">Official Company Information</div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                      {officialDocs.map((doc, i) => (
+                        <div key={i} className="flex justify-between border-b border-gray-100 py-1">
+                          <span className="text-gray-700 font-medium">{doc.type}</span>
+                          <span className="text-gray-600">{doc.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+                {/* Bank Details */}
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">Follow Us</h3>
-                    <div className="flex space-x-4">
-                      <a href="#" className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                      <a href="#" className="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition-colors">
-                        <Twitter className="h-5 w-5" />
-                      </a>
-                      <a href="#" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition-colors">
-                        <Youtube className="h-5 w-5" />
-                      </a>
-                      <a href="#" className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center text-white hover:bg-blue-900 transition-colors">
-                        <Facebook className="h-5 w-5" />
-                      </a>
-                    </div>
+                    <div className="font-semibold text-primary mb-2">🏦 Our Principal Bankers</div>
+                    <ul className="list-disc pl-6 text-gray-700 text-sm">
+                      {banks.map((b, i) => (
+                        <li key={i}>{b}</li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               </div>
@@ -285,27 +316,7 @@ export default function Contact() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {offices.map((office, index) => (
-                <Card key={index}>
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">{office.city}</h3>
-                    <div className="space-y-2 text-sm text-gray-600">
-                      <div className="flex items-start space-x-2">
-                        <MapPin className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
-                        <p>{office.address}</p>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                        <p>{office.phone}</p>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Mail className="h-4 w-4 text-primary flex-shrink-0" />
-                        <p>{office.email}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+              {/* The offices.map block was removed as per the edit hint. */}
             </div>
           </div>
         </div>

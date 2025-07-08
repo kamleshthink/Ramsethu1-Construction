@@ -9,22 +9,22 @@ export const statistics = [
 export const expertiseAreas = [
   {
     title: "Buildings",
-    description: "Buildings & housing are key measures of growth and development. Ramsetu Construction has contributed to construction including industrial buildings, commercial buildings, IT parks, and shopping malls.",
+    description: "Buildings & housing are key measures of growth and development. Ramsethu Construction has contributed to construction including industrial buildings, commercial buildings, IT parks, and shopping malls.",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
   },
   {
     title: "Water & Environment",
-    description: "Management of water and waste water has assumed enormous significance. Ramsetu Construction plays a crucial role in executing water supply, drainage systems and sewage treatment plants.",
+    description: "Management of water and waste water has assumed enormous significance. Ramsethu Construction plays a crucial role in executing water supply, drainage systems and sewage treatment plants.",
     image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
   },
   {
     title: "Transportation",
-    description: "Roads form the heart-line of transportation. Ramsetu Construction has proved to be a reliable executor of large-scale contracts, transforming the roads & highways network in the country.",
+    description: "Roads form the heart-line of transportation. Ramsethu Construction has proved to be a reliable executor of large-scale contracts, transforming the roads & highways network in the country.",
     image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
   },
   {
     title: "Railways",
-    description: "The development of the nation is kept on track by smooth movement of people and goods. Ramsetu Construction engages in dedicated freight corridors and zonal railway projects.",
+    description: "The development of the nation is kept on track by smooth movement of people and goods. Ramsethu Construction engages in dedicated freight corridors and zonal railway projects.",
     image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
   },
   {
@@ -34,7 +34,7 @@ export const expertiseAreas = [
   },
   {
     title: "Mining",
-    description: "Spurred by government's plans for private sector participation, Ramsetu Construction is engaged in Mine Developer-cum-Operator roles, removal of overburden and coal extraction.",
+    description: "Spurred by government's plans for private sector participation, Ramsethu Construction is engaged in Mine Developer-cum-Operator roles, removal of overburden and coal extraction.",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
   }
 ];
@@ -65,16 +65,22 @@ export const showcaseProjects = [
 
 export const leadershipTeam = [
   {
-    name: "Dr. A V  Shastri",
-    position: "Founder Chairman Emeritus",
-    description: "Padma Shri Awardee",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
+    name: "Sanjeet Kumar",
+    position: "Management Director",
+    description: "Operational Excellence",
+    image: "/assets/administration/Sanjeet-Kumar-MD-225x300.jpeg"
   },
   {
-    name: "Managing Director",
+    name: "Abhishek Kumar",
     position: "Chief Executive Officer",
     description: "Strategic Leadership",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
+    image: "/assets/administration/Abhishek-Director-258x300.jpeg"
+  },
+  {
+    name: "Dheeraj Kumar",
+    position: "Director-cum-Procurement Head",
+    description: "Procurement & Management",
+    image: "/assets/administration/Dheeraj-Director-cum-Procurement-head-e1649271054262-172x300.jpeg"
   },
   {
     name: "Chief Financial Officer",
