@@ -55,7 +55,7 @@ const majorClients = {
     {
       id: 'ge',
       name: 'GE T&D India Ltd.',
-      logo: logo: './assets/clients/ge.png',
+      logo: logo: '/assets/clients/ge.png',
 
       description: 'Substation EPC Works in Durgapur, Ramkanali, Purulia',
     },
