@@ -140,10 +140,10 @@ export default function IndiaPresenceMap() {
             </div>
             <p className="text-lg text-blue-600 font-semibold mb-2">{marker.city}</p>
             <p className="text-sm text-gray-600 leading-relaxed">
-              {marker.name === "Bihar" && "Eastern Regional Hub - Infrastructure & Development Projects"}
-              {marker.name === "Jharkhand" && "Mining & Industrial Infrastructure Specialists"}
-              {marker.name === "Uttar Pradesh" && "Northern Operations Center - Mega Infrastructure Projects"}
-              {marker.name === "West Bengal" && "Eastern Coastal Hub - Port & Urban Development"}
+              {marker.name === "Bihar" && "Railway, Electrical, Solar Projects"}
+              {marker.name === "Jharkhand" && "Construction, Electrical, Industrial Works"}
+              {marker.name === "Uttar Pradesh" && "Railway, Electrical, Urban Projects"}
+              {marker.name === "West Bengal" && "Electrical, Solar, Urban Development"}
             </p>
           </div>
         ))}

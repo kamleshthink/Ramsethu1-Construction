@@ -143,6 +143,17 @@ export default function Home() {
     testimonialsScrollRef.current.scrollBy({ left: dir === 'left' ? -amount : amount, behavior: 'smooth' });
   };
 
+  const annualReportsScrollRef = useRef<HTMLDivElement>(null);
+  const scrollAnnualReports = (dir: 'left' | 'right') => {
+    if (annualReportsScrollRef.current) {
+      const { scrollLeft, clientWidth } = annualReportsScrollRef.current;
+      annualReportsScrollRef.current.scrollTo({
+        left: dir === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   // Animation hooks for each section
   const achievementsAnimation = useScrollAnimation(0);
   const coreSpecialisationAnimation = useScrollAnimation(100);
@@ -676,7 +687,11 @@ export default function Home() {
               </div>
               
               <div className="relative">
-                <div className="flex overflow-x-auto pb-6 scrollbar-hide gap-6 lg:gap-8">
+                {/* Left Arrow */}
+                <button onClick={() => scrollAnnualReports('left')} className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-300 rounded-full shadow p-2 hover:bg-blue-100 focus:outline-none">
+                  <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <div ref={annualReportsScrollRef} className="flex overflow-x-auto pb-6 scrollbar-hide gap-6 lg:gap-8">
                   {annualReports.map((report, index) => (
                     <div key={index} className="flex-none w-80 group">
                       <div className="relative">
@@ -706,7 +721,10 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                
+                {/* Right Arrow */}
+                <button onClick={() => scrollAnnualReports('right')} className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-300 rounded-full shadow p-2 hover:bg-blue-100 focus:outline-none">
+                  <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
                 {/* Gradient overlays for scroll indication */}
                 <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-blue-50 to-transparent pointer-events-none"></div>
                 <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-indigo-50 to-transparent pointer-events-none"></div>
@@ -727,6 +745,26 @@ export default function Home() {
       
       {/* Scroll to Top Button */}
       <ScrollToTop />
+      {selectedVideo && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+    <div className="bg-white rounded-2xl shadow-2xl p-4 max-w-2xl w-full relative">
+      <button onClick={() => setSelectedVideo(null)} className="absolute top-2 right-2 bg-gray-200 hover:bg-red-500 hover:text-white rounded-full p-2 transition-colors">
+        <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div className="aspect-video w-full">
+        <iframe
+          width="100%"
+          height="100%"
+          src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
+          title="Achievement Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }

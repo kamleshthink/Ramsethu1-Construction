@@ -130,7 +130,7 @@ export default function Header() {
         <div className="flex justify-between items-center px-0 py-3 max-w-7xl mx-auto">
           {/* Logo */}
           <Link to="/">
-            <div className="flex items-center space-x-3 pl-0 bg-blue-100/80 border border-blue-200 rounded-xl shadow px-3 py-1.5">
+            <div className="flex items-center space-x-3 pl-0 bg-blue-100/80 border border-blue-200 rounded-xl shadow px-3 py-1.5 ml-4 sm:ml-0">
               <img
                 src="/assets/photos/logo.png"
                 alt="EBC Logo"
@@ -188,7 +188,7 @@ export default function Header() {
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="lg:hidden">
-                <Menu className="h-5 w-5" />
+                <Menu className="h-9 w-9" />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-80">

@@ -67,22 +67,30 @@ export default function Expertise() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-12">Our Track Record</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
               <div>
-                <div className="text-4xl font-bold text-primary mb-2">490+</div>
-                <div className="text-gray-600">Building Projects</div>
+                <div className="text-4xl font-bold text-primary mb-2">120+</div>
+                <div className="text-gray-600">Projects Delivered</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary mb-2">20,000+</div>
-                <div className="text-gray-600">KM Pipelines</div>
+                <div className="text-4xl font-bold text-primary mb-2">40+</div>
+                <div className="text-gray-600">Railway Signalling</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary mb-2">350,000+</div>
-                <div className="text-gray-600">Acres Irrigated</div>
+                <div className="text-4xl font-bold text-primary mb-2">60+</div>
+                <div className="text-gray-600">Solar Microgrids</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary mb-2">35,000+</div>
-                <div className="text-gray-600">Villages Electrified</div>
+                <div className="text-4xl font-bold text-primary mb-2">100+</div>
+                <div className="text-gray-600">Electrical Grids</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-primary mb-2">15+</div>
+                <div className="text-gray-600">Years Experience</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-primary mb-2">4</div>
+                <div className="text-gray-600">States Covered</div>
               </div>
             </div>
           </div>
