@@ -2,7 +2,7 @@
 
 Live Website: - https://ramsethu1-construction.onrender.com/
 
-Welcome to rAMSETHU  Construction, a modern frontend website built for showcasing India's leading infrastructure company with over  decades of excellence.
+Welcome to RAMSETHU  Construction, a modern frontend website built for showcasing India's leading infrastructure company with over  decades of excellence.
 
 🔨 Built With
 
