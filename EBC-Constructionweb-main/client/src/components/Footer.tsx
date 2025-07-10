@@ -55,11 +55,36 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
               <ul className="space-y-2 text-sm">
-                <li><span className="text-gray-400">Buildings</span></li>
-                <li><span className="text-gray-400">Transportation</span></li>
-                <li><span className="text-gray-400">Water & Environment</span></li>
-                <li><span className="text-gray-400">Railways</span></li>
-                <li><span className="text-gray-400">Mining</span></li>
+                <li>
+                  <Link to="/expertise/solar-rooftop">
+                    <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Solar Rooftop Solutions</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/expertise/railway-signalling">
+                    <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Railway Signalling Systems</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/expertise/solar-microgrid">
+                    <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Solar Microgrid Deployment</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/expertise/networking-telecom">
+                    <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Networking & Telecommunication</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/expertise/electrical-grid">
+                    <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Electrical Grid Solutions</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/expertise/installation-maintenance">
+                    <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">High-Quality Installation & Maintenance</span>
+                  </Link>
+                </li>
               </ul>
             </div>
 

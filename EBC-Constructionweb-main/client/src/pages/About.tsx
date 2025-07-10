@@ -116,58 +116,201 @@ export default function About() {
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Company Information */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Journey</h2>
-              <p className="text-xl text-gray-600">Key milestones in our 4-decade journey</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">🏢 Company Information</h2>
+              <p className="text-xl text-gray-600">Official company details and legal information</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <Card>
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Company Details</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center">
+                      <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                      <div>
+                        <div className="font-semibold text-gray-900">Established</div>
+                        <div className="text-gray-600">Year 2016</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+                      <div>
+                        <div className="font-semibold text-gray-900">Legal Form</div>
+                        <div className="text-gray-600">Private Limited Company</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                      <div>
+                        <div className="font-semibold text-gray-900">CIN</div>
+                        <div className="text-gray-600">U74999JH2016PTC009115</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
+                      <div>
+                        <div className="font-semibold text-gray-900">Registered Office</div>
+                        <div className="text-gray-600">Sijhua, Bariyath, Ichak, Hazaribagh, Jharkhand</div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Current Status</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-gray-900">Active Projects</span>
+                      <Badge variant="secondary">40+</Badge>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-gray-900">Operational States</span>
+                      <Badge variant="secondary">5+</Badge>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-gray-900">Workforce</span>
+                      <Badge variant="secondary">100+</Badge>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-gray-900">Current Turnover</span>
+                      <Badge variant="secondary">₹10.00 Cr</Badge>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Development Timeline */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">📈 Year-wise Company Development Timeline</h2>
+              <p className="text-xl text-gray-600">Our journey from foundation to national presence</p>
             </div>
             
             <div className="space-y-8">
               {[
                 {
-                  year: "1980s",
-                  title: "Foundation Years",
-                  description: "Ramsethu Construction was established with a vision to contribute to India's infrastructure development."
+                  year: "2016",
+                  title: "Foundation Year",
+                  description: "Company incorporated as a Private Limited Entity. Initial focus on small-scale electrical contracts and local infrastructure services. Set up head office in Hazaribagh, Jharkhand.",
+                  turnover: "N/A",
+                  icon: "🏢"
                 },
                 {
-                  year: "1990s", 
-                  title: "Expansion Phase",
-                  description: "Expanded operations across multiple states and diversified into various construction sectors."
+                  year: "2017–2018",
+                  title: "Infrastructure Groundwork",
+                  description: "Built early partnerships with local contractors and vendors. Started supplying manpower and basic electrical works to PSUs and SMEs. Slowly entered mechanical project support (pipe laying, welding, etc.)",
+                  turnover: "N/A",
+                  icon: "🏗️"
                 },
                 {
-                  year: "2000s",
-                  title: "Technology Integration",
-                  description: "Adopted advanced construction technologies and modern project management practices."
+                  year: "2019–2020",
+                  title: "First Major Projects",
+                  description: "Bagged contracts in electrical EPC including panel installation, transformer wiring. Set up branch office in Ranchi for operations expansion.",
+                  turnover: "₹1.04 Cr",
+                  icon: "⚡"
                 },
                 {
-                  year: "2010s",
-                  title: "Sustainable Growth",
-                  description: "Focused on sustainable construction practices and environmental responsibility."
+                  year: "2020–2021",
+                  title: "Entry into Solar & Railways",
+                  description: "Entered the Solar EPC segment, delivering small rooftop systems. Started Railway S&T project execution for Indian Railways (RTU, IBS).",
+                  turnover: "₹1.05 Cr",
+                  icon: "☀️"
                 },
                 {
-                  year: "2020s",
-                  title: "Digital Transformation",
-                  description: "Embracing digital technologies and smart construction solutions for the future."
+                  year: "2021–2022",
+                  title: "Expansion of Project Portfolio",
+                  description: "Delivered solar microgrids in partnership with Gram Oorja & PRADAN. Installed biogas plants in remote Jharkhand villages. Executed signaling projects in Ranchi & Muri Railway Divisions.",
+                  turnover: "₹2.58 Cr",
+                  icon: "🚂"
+                },
+                {
+                  year: "2022–2023",
+                  title: "PSU Breakthroughs",
+                  description: "Awarded large-scale projects from GE T&D India Ltd. (132–400kV substations). Delivered safety and CCTV installations at BHEL PVUNL Project Site. Expanded manpower and machinery.",
+                  turnover: "₹5.48 Cr",
+                  icon: "🏭"
+                },
+                {
+                  year: "2023–2024",
+                  title: "Strong National Presence",
+                  description: "Ongoing work worth ₹8+ Cr in Railways, GE Substations, and Biogas. Operational in 5+ States: Jharkhand, Bihar, West Bengal, Uttar Pradesh, Odisha. Workforce expanded to 100+ engineers and skilled staff.",
+                  turnover: "₹10.00 Cr",
+                  icon: "🇮🇳"
                 }
               ].map((milestone, index) => (
                 <div key={index} className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                      <Calendar className="h-6 w-6 text-white" />
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white text-xl">
+                      {milestone.icon}
                     </div>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center mb-2">
                       <Badge variant="secondary" className="mr-3">{milestone.year}</Badge>
                       <h3 className="text-xl font-bold text-gray-900">{milestone.title}</h3>
+                      {milestone.turnover !== "N/A" && (
+                        <Badge variant="outline" className="ml-3 bg-green-50 text-green-700 border-green-200">
+                          {milestone.turnover}
+                        </Badge>
+                      )}
                     </div>
                     <p className="text-gray-600">{milestone.description}</p>
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Growth Summary */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">🏆 From 2016 to 2024: Key Growth Summary</h2>
+              <p className="text-xl text-gray-600">Our remarkable journey of growth and expansion</p>
+            </div>
+            
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse border border-gray-300">
+                <thead>
+                  <tr className="bg-primary text-white">
+                    <th className="border border-gray-300 px-4 py-3 text-left">Year</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left">Major Milestone</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left">Turnover</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { year: "2016", milestone: "Company Founded", turnover: "N/A" },
+                    { year: "2019–20", milestone: "First PSU contracts", turnover: "₹1.04 Cr" },
+                    { year: "2020–21", milestone: "Railway and Solar entry", turnover: "₹1.05 Cr" },
+                    { year: "2021–22", milestone: "Expansion into Biogas & Rural Microgrids", turnover: "₹2.58 Cr" },
+                    { year: "2022–23", milestone: "GE T&D, BHEL Projects, Civil Infra", turnover: "₹5.48 Cr" },
+                    { year: "2023–24", milestone: "10+ Crore turnover, 40+ projects, PAN India presence", turnover: "₹10.00 Cr (GST)" }
+                  ].map((row, index) => (
+                    <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                      <td className="border border-gray-300 px-4 py-3 font-semibold">{row.year}</td>
+                      <td className="border border-gray-300 px-4 py-3">{row.milestone}</td>
+                      <td className="border border-gray-300 px-4 py-3 font-semibold text-primary">{row.turnover}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

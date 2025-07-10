@@ -1,9 +1,29 @@
 export const statistics = [
-  { value: 490, label: "Building Projects" },
-  { value: 2000, label: "KMS Water Pipelines" },
-  { value: 3500, label: "Acres Land Irrigated" },
-  { value: 3500, label: "Villages Electrified" },
-  { value: 1100, label: "Employees" },
+  { 
+    value: 40, 
+    label: "Projects Successfully Executed",
+    icon: "🏗️"
+  },
+  { 
+    value: 5, 
+    label: "States Operational Presence Across Eastern & Central India",
+    icon: "🌍"
+  },
+  { 
+    value: 300, 
+    label: "Solar Power Capacity Installed (kWp)",
+    icon: "☀️"
+  },
+  { 
+    value: 50, 
+    label: "Villages Electrified via Microgrids",
+    icon: "⚡"
+  },
+  { 
+    value: 100, 
+    label: "Skilled Engineers & Workforce",
+    icon: "👷‍♂️"
+  },
 ];
 
 export const expertiseAreas = [

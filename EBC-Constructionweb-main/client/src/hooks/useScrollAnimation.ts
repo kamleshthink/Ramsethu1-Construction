@@ -1,22 +1,42 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
-export function useScrollAnimation() {
+export const useScrollAnimation = (delay: number = 0) => {
   const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Add delay before showing the element
+          setTimeout(() => {
             setIsVisible(true);
-          }
-        });
+          }, delay);
+        }
       },
-      { threshold: 0.1 }
+      {
+        threshold: 0.1, // Trigger when 10% of element is visible
+        rootMargin: '0px 0px -50px 0px' // Start animation slightly before element comes into view
+      }
     );
 
-    return () => observer.disconnect();
-  }, []);
+    const currentElement = elementRef.current;
+    if (currentElement) {
+      observer.observe(currentElement);
+    }
 
-  return { isVisible };
-}
+    return () => {
+      if (currentElement) {
+        observer.unobserve(currentElement);
+      }
+    };
+  }, [delay]);
+
+  return {
+    elementRef,
+    isVisible,
+    animationClass: isVisible 
+      ? 'animate-fade-in-up opacity-100 translate-y-0' 
+      : 'opacity-0 translate-y-8'
+  };
+};

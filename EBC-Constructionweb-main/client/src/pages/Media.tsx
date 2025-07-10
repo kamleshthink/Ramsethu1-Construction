@@ -6,57 +6,58 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Helmet } from "react-helmet";
 import { Play, Calendar, Award, Newspaper, Video } from "lucide-react";
 
+// Real company data (now in English)
 const newsItems = [
   {
     id: 1,
-    title: "Ramsethu Construction Wins Major Infrastructure Contract Worth ₹5,000 Crores",
-    excerpt: "The company has secured a significant railway infrastructure project that will enhance connectivity across three states.",
-    date: "2024-01-15",
-    category: "Business",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+    title: "400kV Substation Project Successfully Completed with GE T&D India Ltd.",
+    excerpt: "Ramsethu completed the high-voltage substation in Durgapur, WB ahead of schedule.",
+    date: "2024-03-10",
+    category: "Projects",
+    image: "/assets/photos/construction photos/Networks_Telecommunications (1).jpg"
   },
   {
     id: 2,
-    title: "Sustainability Initiative: Ramsethu Construction Commits to Carbon Neutral Operations by 2030",
-    excerpt: "The company announces comprehensive environmental strategy to reduce carbon footprint across all operations.",
-    date: "2024-01-10",
-    category: "Sustainability",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+    title: "25kWp Solar Microgrids Commissioned for Azure Power",
+    excerpt: "Clean energy delivered to multiple villages in Jharkhand through solar microgrids.",
+    date: "2024-02-18",
+    category: "Renewable Energy",
+    image: "/assets/photos/construction photos/solar microgrid.webp"
   },
   {
     id: 3,
-    title: "AIIMS Project Completion Ahead of Schedule",
-    excerpt: "NCC successfully completes the state-of-the-art medical facility two months ahead of the original timeline.",
-    date: "2024-01-05",
-    category: "Projects",
-    image: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+    title: "Advanced Signalling Systems for Indian Railways",
+    excerpt: "Signaling and telecom infrastructure upgraded across Eastern & South Eastern Railway zones.",
+    date: "2024-01-25",
+    category: "Railways",
+    image: "/assets/photos/construction photos/Railway-Signaling.jpg"
   }
 ];
 
 const videos = [
   {
     id: 1,
-    title: "The Story of Dr. A V S Raju - Our Visionary Leader",
-    description: "Biography and journey of our Founder Chairman Emeritus",
-    duration: "8:16",
-    thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    title: "Ramsethu Corporate Film 2024",
+    description: "A showcase of our company's achievements and landmark projects.",
+    duration: "5:42",
+    thumbnail: "/assets/photos/construction photos/WhatsApp Image 2025-07-07 at 19.43.55_93338e1f.jpg",
+    embedUrl: "https://www.youtube.com/embed/1wZw7Rv6lGg"
   },
   {
     id: 2,
-    title: "Ramsethu Construction Corporate Film 2024",
-    description: "Showcasing our infrastructure excellence across India",
-    duration: "5:42",
-    thumbnail: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    title: "Solar Microgrid Success Story",
+    description: "The story of successful solar microgrid deployment in Jharkhand villages.",
+    duration: "3:28",
+    thumbnail: "/assets/photos/construction photos/solar microgrid.webp",
+    embedUrl: "https://www.youtube.com/embed/2Vv-BfVoq4g"
   },
   {
     id: 3,
-    title: "Behind the Scenes: AIIMS Construction",
-    description: "Time-lapse documentation of our healthcare infrastructure project",
-    duration: "3:28",
-    thumbnail: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    title: "Railway Signalling Project Timelapse",
+    description: "Timelapse video of our railway signalling project execution.",
+    duration: "4:10",
+    thumbnail: "/assets/photos/construction photos/Railway-Signaling.jpg",
+    embedUrl: "https://www.youtube.com/embed/3JZ_D3ELwOQ"
   }
 ];
 
@@ -64,47 +65,47 @@ const events = [
   {
     id: 1,
     title: "Annual Shareholders Meeting 2024",
-    date: "2024-02-15",
-    location: "Hyderabad",
-    description: "Annual general meeting to discuss company performance and future strategy."
+    date: "2024-04-15",
+    location: "Ranchi, Jharkhand",
+    description: "Annual meeting to discuss company growth and strategy."
   },
   {
     id: 2,
-    title: "Infrastructure Summit Participation",
+    title: "Safety Week Celebration",
     date: "2024-03-10",
-    location: "Mumbai",
-    description: "EBC leadership panel discussion on sustainable infrastructure development."
+    location: "All Sites",
+    description: "Safety awareness and training programs across all project sites."
   },
   {
     id: 3,
-    title: "Safety Week Celebration",
-    date: "2024-04-01",
-    location: "All Sites",
-    description: "Company-wide safety awareness and training programs across all project sites."
+    title: "Solar Project Inauguration",
+    date: "2024-02-20",
+    location: "Gumla, Jharkhand",
+    description: "Inauguration of new solar project and its community impact."
   }
 ];
 
 const awards = [
   {
     id: 1,
-    title: "Excellence in Infrastructure Award 2023",
+    title: "Excellence in Infrastructure Award",
     organization: "Construction Industry Development Council",
     year: "2023",
-    description: "Recognized for outstanding contribution to India's infrastructure development."
+    description: "Honored for outstanding contribution to India's infrastructure development."
   },
   {
     id: 2,
-    title: "Best Employer Award",
-    organization: "Indian Chamber of Commerce",
+    title: "Best Solar Project Implementation",
+    organization: "Solar Energy Society of India",
     year: "2023",
-    description: "Acknowledged for exceptional employee welfare and development programs."
+    description: "Awarded for successful solar microgrid deployment in Jharkhand."
   },
   {
     id: 3,
-    title: "Sustainability Champion",
-    organization: "Green Building Council",
-    year: "2022",
-    description: "Awarded for implementing environmentally sustainable construction practices."
+    title: "Railway Infrastructure Excellence",
+    organization: "Indian Railways",
+    year: "2023",
+    description: "Recognized for excellence in railway signalling systems."
   }
 ];
 

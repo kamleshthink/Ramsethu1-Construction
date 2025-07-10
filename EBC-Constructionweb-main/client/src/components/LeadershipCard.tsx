@@ -9,7 +9,7 @@ interface LeadershipCardProps {
 
 export default function LeadershipCard({ name, position, image, description }: LeadershipCardProps) {
   return (
-    <Card className="text-center card-hover">
+    <Card className="text-center card-hover bg-pink-50/30">
       <CardContent className="p-6">
         <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
           <img 

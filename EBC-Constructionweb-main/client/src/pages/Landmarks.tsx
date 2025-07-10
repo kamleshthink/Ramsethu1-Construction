@@ -5,239 +5,212 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Helmet } from "react-helmet";
-import { Search, Filter, MapPin, Calendar } from "lucide-react";
+import { Search, Filter, MapPin, Calendar, User, Layers, CheckCircle, Loader2 } from "lucide-react";
+import { completedProjects, ongoingProjects } from "./Projects";
+import { expertiseData } from "@/data/expertiseData";
 
-const projects = [
-  {
-    id: 1,
-    title: "AIIMS Hospital Complex",
-    description: "State-of-the-art medical facility with advanced healthcare infrastructure and modern amenities.",
-    category: "Healthcare",
-    location: "New Delhi",
-    year: "2023",
-    status: "Completed",
-    image: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-  },
-  {
-    id: 2,
-    title: "Mumbai-Pune Expressway Bridge",
-    description: "Major transportation infrastructure connecting Mumbai and Pune with modern engineering solutions.",
-    category: "Transportation",
-    location: "Maharashtra",
-    year: "2022",
-    status: "Completed",
-    image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-  },
-  {
-    id: 3,
-    title: "Hyderabad IT Park",
-    description: "Modern technology campus with sustainable design features and world-class facilities.",
-    category: "Buildings",
-    location: "Hyderabad",
-    year: "2023",
-    status: "Completed",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-  },
-  {
-    id: 4,
-    title: "Cauvery Water Treatment Plant",
-    description: "Large-scale water treatment facility serving millions with advanced purification technology.",
-    category: "Water & Environment",
-    location: "Karnataka",
-    year: "2022",
-    status: "Completed",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-  },
-  {
-    id: 5,
-    title: "Chennai Metro Rail",
-    description: "Urban transportation solution connecting major areas of Chennai with modern metro infrastructure.",
-    category: "Railways",
-    location: "Chennai",
-    year: "2021",
-    status: "Completed",
-    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-  },
-  {
-    id: 6,
-    title: "Kaleshwaram Lift Irrigation",
-    description: "Massive irrigation project providing water to drought-prone areas with innovative lift technology.",
-    category: "Irrigation",
-    location: "Telangana",
-    year: "2023",
-    status: "Completed",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-  },
-  {
-    id: 7,
-    title: "Singareni Coal Mining",
-    description: "Large-scale coal extraction project with modern mining equipment and safety measures.",
-    category: "Mining",
-    location: "Telangana",
-    year: "2022",
-    status: "Ongoing",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-  },
-  {
-    id: 8,
-    title: "Karnataka Power Grid",
-    description: "High-voltage transmission infrastructure connecting power generation to distribution networks.",
-    category: "Electrical",
-    location: "Karnataka",
-    year: "2023",
-    status: "Ongoing",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-  }
+// Projects को expertiseData से enrich करें ताकि image, title, category मिल सके
+function enrichProject(project) {
+  // expertiseData में client/location/description/value से match करें
+  const match = expertiseData.find(ed => {
+    // title या description या client/location से loose match
+    return (
+      (ed.title && project.description && project.description.toLowerCase().includes(ed.title.toLowerCase())) ||
+      (ed.projects && ed.projects.some(p => project.description && project.description.toLowerCase().includes(p.toLowerCase()))) ||
+      (ed.title && project.client && project.client.toLowerCase().includes(ed.title.toLowerCase().split(" ")[0]))
+    );
+  });
+  return {
+    ...project,
+    image: match?.image,
+    category: match?.title,
+    title: match?.title || project.client
+  };
+}
+
+const allProjects = [
+  ...completedProjects.map(p => enrichProject({ ...p, status: "Completed" })),
+  ...ongoingProjects.map(p => enrichProject({ ...p, status: "Ongoing" }))
 ];
 
-const categories = ["All", "Healthcare", "Transportation", "Buildings", "Water & Environment", "Railways", "Irrigation", "Mining", "Electrical"];
+const allClients = Array.from(new Set(allProjects.map(p => p.client)));
+const allLocations = Array.from(new Set(allProjects.map(p => p.location)));
+const allCategories = Array.from(new Set(allProjects.map(p => p.category || "Other")));
+const allStatus = ["All", "Completed", "Ongoing"];
 
 export default function Landmarks() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [selectedClient, setSelectedClient] = useState("All");
+  const [selectedLocation, setSelectedLocation] = useState("All");
+  const [selectedStatus, setSelectedStatus] = useState("All");
+  const [filteredProjects, setFilteredProjects] = useState(allProjects);
 
   const handleFilter = () => {
-    let filtered = projects;
-    
+    let filtered = allProjects;
     if (searchTerm) {
-      filtered = filtered.filter(project => 
-        project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.location.toLowerCase().includes(searchTerm.toLowerCase())
+      filtered = filtered.filter(project =>
+        project.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        project.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        project.location?.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-    
     if (selectedCategory !== "All") {
-      filtered = filtered.filter(project => project.category === selectedCategory);
+      filtered = filtered.filter(project => (project.category || "Other") === selectedCategory);
     }
-    
+    if (selectedClient !== "All") {
+      filtered = filtered.filter(project => project.client === selectedClient);
+    }
+    if (selectedLocation !== "All") {
+      filtered = filtered.filter(project => project.location === selectedLocation);
+    }
+    if (selectedStatus !== "All") {
+      filtered = filtered.filter(project => project.status === selectedStatus);
+    }
     setFilteredProjects(filtered);
   };
 
   useEffect(() => {
     handleFilter();
-  }, [searchTerm, selectedCategory]);
+  }, [searchTerm, selectedCategory, selectedClient, selectedLocation, selectedStatus]);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100">
       <Helmet>
         <title>Landmark Projects - Ramsethu Construction </title>
-        <meta name="description" content="Explore Ramsethu Construction's landmark infrastructure projects across India including healthcare, transportation, buildings, and more." />
+        <meta name="description" content="Explore Ramsethu Construction's landmark infrastructure projects across India including electrical, solar, railway, and more." />
       </Helmet>
-
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-primary to-blue-800 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Landmark Projects</h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100">
-              Showcasing our portfolio of transformative infrastructure projects
+              हमारी कंपनी के असली प्रोजेक्ट्स और उपलब्धियां
             </p>
           </div>
         </div>
       </section>
-
-      {/* Filters */}
-      <section className="py-8 bg-gray-50">
+      {/* Advanced Filters */}
+      <section className="py-8 bg-white sticky top-0 z-30 shadow-sm">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row gap-4 items-center">
-              <div className="flex-1">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-                  <Input
-                    placeholder="Search projects..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10"
-                  />
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger className="w-[180px]">
-                    <Filter className="h-4 w-4 mr-2" />
-                    <SelectValue placeholder="Category" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {categories.map((category) => (
-                      <SelectItem key={category} value={category}>
-                        {category}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <Button onClick={handleFilter} variant="outline">
-                  Apply Filters
-                </Button>
-              </div>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+            <div className="col-span-2 flex items-center relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <Input
+                placeholder="Search projects..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10"
+              />
             </div>
+            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+              <SelectTrigger className="w-full">
+                <Layers className="h-4 w-4 mr-2" />
+                <SelectValue placeholder="Category" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="All">All Categories</SelectItem>
+                {allCategories.map((category) => (
+                  <SelectItem key={category} value={category}>{category}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select value={selectedClient} onValueChange={setSelectedClient}>
+              <SelectTrigger className="w-full">
+                <User className="h-4 w-4 mr-2" />
+                <SelectValue placeholder="Client" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="All">All Clients</SelectItem>
+                {allClients.map((client) => (
+                  <SelectItem key={client} value={client}>{client}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select value={selectedLocation} onValueChange={setSelectedLocation}>
+              <SelectTrigger className="w-full">
+                <MapPin className="h-4 w-4 mr-2" />
+                <SelectValue placeholder="Location" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="All">All Locations</SelectItem>
+                {allLocations.map((loc) => (
+                  <SelectItem key={loc} value={loc}>{loc}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select value={selectedStatus} onValueChange={setSelectedStatus}>
+              <SelectTrigger className="w-full">
+                <CheckCircle className="h-4 w-4 mr-2" />
+                <SelectValue placeholder="Status" />
+              </SelectTrigger>
+              <SelectContent>
+                {allStatus.map((status) => (
+                  <SelectItem key={status} value={status}>{status}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
         </div>
       </section>
-
       {/* Projects Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project) => (
-                <Card key={project.id} className="overflow-hidden card-hover">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {filteredProjects.map((project, idx) => (
+              <div
+                key={idx}
+                className="rounded-3xl shadow-2xl bg-gradient-to-br from-white via-blue-50 to-indigo-100 border border-blue-100 overflow-hidden group hover:scale-105 hover:shadow-blue-300 transition-all duration-300"
+              >
+                <div className="relative h-56 w-full overflow-hidden">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title || project.client}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-200 to-indigo-200 text-6xl text-blue-400">
+                      <Layers />
+                    </div>
+                  )}
+                  <div className="absolute top-2 left-2 flex gap-2">
+                    <Badge variant="secondary" className="bg-white/80 text-blue-800 font-bold shadow">{project.category || "Other"}</Badge>
                   </div>
-                  <CardContent className="p-6">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                      <Badge variant="secondary">{project.category}</Badge>
-                    </div>
-                    <p className="text-gray-600 mb-4 text-sm">{project.description}</p>
-                    <div className="flex items-center justify-between text-sm text-gray-500">
-                      <div className="flex items-center gap-1">
-                        <MapPin className="h-4 w-4" />
-                        <span>{project.location}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Calendar className="h-4 w-4" />
-                        <span>{project.year}</span>
-                      </div>
-                    </div>
-                    <div className="mt-4">
-                      <Badge variant={project.status === "Completed" ? "default" : "outline"}>
-                        {project.status}
-                      </Badge>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            
-            {filteredProjects.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">No projects found matching your criteria.</p>
+                  <div className="absolute top-2 right-2">
+                    <Badge className={`font-bold px-3 py-1 text-xs shadow ${project.status === "Completed" ? "bg-green-500/90 text-white animate-pulse" : "bg-yellow-400/90 text-gray-900 animate-bounce"}`}>
+                      {project.status}
+                    </Badge>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <User className="h-4 w-4 text-blue-700" />
+                    <span className="font-bold text-blue-900 text-lg">{project.client}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-600 mb-1">
+                    <MapPin className="h-4 w-4" />
+                    <span>{project.location}</span>
+                  </div>
+                  <div className="text-gray-700 mb-2 text-sm min-h-[48px]">{project.description}</div>
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-semibold">{project.value}</span>
+                  </div>
+                  <Button size="sm" variant="outline" className="mt-2 w-full group-hover:bg-blue-100 group-hover:text-blue-900 transition-all duration-200">
+                    View Project Details
+                  </Button>
+                </CardContent>
               </div>
-            )}
+            ))}
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Start Your Project?</h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Contact us to discuss your infrastructure development needs
-            </p>
-            <Button size="lg" className="bg-primary hover:bg-blue-800">
-              Get in Touch
-            </Button>
-          </div>
+          {filteredProjects.length === 0 && (
+            <div className="text-center text-gray-500 py-20 flex flex-col items-center">
+              <Loader2 className="h-10 w-10 animate-spin mb-4 text-blue-400" />
+              <div className="text-xl font-bold">कोई प्रोजेक्ट नहीं मिला!</div>
+              <div className="text-gray-500">Filter बदलें या search करें।</div>
+            </div>
+          )}
         </div>
       </section>
     </div>
