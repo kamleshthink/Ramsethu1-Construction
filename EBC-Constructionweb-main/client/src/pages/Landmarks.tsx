@@ -86,7 +86,7 @@ export default function Landmarks() {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Landmark Projects</h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100">
-              हमारी कंपनी के असली प्रोजेक्ट्स और उपलब्धियां
+             
             </p>
           </div>
         </div>
